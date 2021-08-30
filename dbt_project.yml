@@ -1,0 +1,22 @@
+name: 'sampledata'
+version: '1.0.0'
+profile: 'sampledata'
+config-version: 2
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+models:
+  sampledata:
+    materialized: table
+    staging:
+        materialized: view
