@@ -5,8 +5,8 @@
 
 with dim_customers as (
     select
-      customers.CUSTOMERNAME as "id_customer_nk",,
-      customers.CONTACTFIRSTNAME as "des_customer",,
+      customers.CUSTOMERNAME as "id_customer_nk",
+      customers.CONTACTFIRSTNAME as "des_customer",
       customers.CREDITLIMIT as "creditlimit"
 
     from sampledata.customers
