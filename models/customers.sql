@@ -16,4 +16,4 @@ final as (
   from dim_customers
 )
 
-select * from final
+insert into sampledata.dim_customer_airbyte (select * from final)
