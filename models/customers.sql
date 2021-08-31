@@ -4,7 +4,7 @@ with dim_customers as (
       CONTACTFIRSTNAME as "des_customer",
       CREDITLIMIT as "creditlimit"
 
-    from public.customers
+    from sampledata.customers
 ),
 
 final as (
