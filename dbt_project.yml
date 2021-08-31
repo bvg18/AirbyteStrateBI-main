@@ -1,6 +1,6 @@
 name: 'sampledata'
 version: '1.0.0'
-profile: 'sampledata'
+profile: 'default'
 config-version: 2
 
 source-paths: ["models"]

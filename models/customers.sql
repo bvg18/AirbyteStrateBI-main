@@ -1,16 +1,19 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
-create table "postgres"."public"."airbyte_dim_customer"
-as (
+with dim_customers as (
     select
-    
-        cast(CUSTOMERNAME) as varchar) as "id_customer_nk",
-        cast(CONTACTFIRSTNAME) as varchar) as "des_customer",
-        cast(CREDITLIMIT) as numeric) as "creditlimit"
+      CUSTOMERNAME as "id_customer_nk",
+      CONTACTFIRSTNAME as "des_customer",
+      CREDITLIMIT as "creditlimit"
 
-    from "postgres".public.customers
-);
+    from public.customers
+),
+
+final as (
+  select
+    dim_customers.id_customer_nk,
+    dim_customers.des_customer,
+    dim_customers.creditlimit
+
+  from dim_customers
+)
+
+select * from final
