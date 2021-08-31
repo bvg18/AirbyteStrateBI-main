@@ -1,6 +1,5 @@
 {{ config(
-    materialized="view",
-    schema="sampledata"
+    materialized="view"
 ) }}
 
 with dim_customers as (
